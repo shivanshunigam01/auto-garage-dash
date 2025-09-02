@@ -26,7 +26,27 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					hover: 'hsl(var(--primary-hover))'
+				},
+				/* Autorox Brand Colors */
+				brand: {
+					blue: 'hsl(var(--brand-blue))',
+					'blue-dark': 'hsl(var(--brand-blue-dark))',
+					'blue-light': 'hsl(var(--brand-blue-light))'
+				},
+				success: {
+					DEFAULT: 'hsl(var(--success))',
+					foreground: 'hsl(var(--success-foreground))',
+					hover: 'hsl(var(--success-hover))'
+				},
+				status: {
+					invoice: 'hsl(var(--status-invoice))',
+					estimate: 'hsl(var(--status-estimate))',
+					delivered: 'hsl(var(--status-delivered))',
+					progress: 'hsl(var(--status-progress))',
+					pending: 'hsl(var(--status-pending))',
+					error: 'hsl(var(--status-error))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
