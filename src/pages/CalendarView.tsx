@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ChevronLeft, ChevronRight, Plus, Eye } from 'lucide-react';
+import AppointmentModal from '@/components/AppointmentModal';
 
 interface Appointment {
   id: string;
@@ -16,6 +17,7 @@ interface Appointment {
 const CalendarView = () => {
   const [currentDate, setCurrentDate] = useState(new Date(2025, 7, 27)); // August 27, 2025
   const [viewType, setViewType] = useState<'week' | 'month'>('week');
+  const [showAppointmentModal, setShowAppointmentModal] = useState(false);
 
   const appointments: Appointment[] = [
     {
@@ -119,7 +121,7 @@ const CalendarView = () => {
           >
             Working Staff ▼
           </Button>
-          <Button variant="brand" className="flex items-center gap-2">
+          <Button variant="brand" className="flex items-center gap-2" onClick={() => setShowAppointmentModal(true)}>
             <Plus className="w-4 h-4" />
             ADD NEW
           </Button>
@@ -207,6 +209,12 @@ const CalendarView = () => {
           </CardContent>
         </Card>
       )}
+
+      {/* Appointment Modal */}
+      <AppointmentModal 
+        isOpen={showAppointmentModal} 
+        onClose={() => setShowAppointmentModal(false)} 
+      />
     </div>
   );
 };
